@@ -1,0 +1,7 @@
+node_modules
+fileToUpload/*
+!fileToUpload/.gitkeep
+images/*
+!images/.gitkeep
+log/*
+!log/.gitkeep

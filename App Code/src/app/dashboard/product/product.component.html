@@ -1,0 +1,53 @@
+<div class="row">
+  <div
+    class="col-md-4 col-sm-6 col-11 mx-auto mb-3"
+    *ngFor="let product of products; let i = index"
+  >
+    <div class="card">
+      <div class="card-header bg-warning">
+        <h5>{{ product.name }}</h5>
+      </div>
+      <div class="card-body">
+        <div class="image">
+          <img [src]="product.image" [alt]="product.name" width="100%" />
+        </div>
+        <p>
+          {{ product.description }}
+        </p>
+        <div class="row">
+          <div class="col-12">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label for="quantity-{{ i }}" class="input-group-text bg-warning text-white"
+                  >Quantity</label
+                >
+              </div>
+              <input
+                type="number"
+                id="quantity-{{ i }}"
+                class="form-control"
+                min="1"
+                [value]="quantity[i]"
+                placeholder="Quantity"
+                (input)="changeQuantity($event.target.value, i)"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <button
+              type="button"
+              class="btn btn-warning btn-block text-white"
+              (click)="addToCart(product, i)"
+            >
+              <i class="fa fa-plus"></i>
+              &nbsp;&nbsp;Add To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{
+  "name": "home-minister",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

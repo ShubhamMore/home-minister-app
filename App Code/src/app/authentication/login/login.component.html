@@ -1,0 +1,71 @@
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+
+<div class="row" *ngIf="!loading">
+  <div class="col-12">
+    <div class="row">
+      <div class="col-md-6 col-10 mx-auto">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="form-heading-2"><i class="fa fa-sign-in"></i>&nbsp;Login</h2>
+          </div>
+          <div class="card-body">
+            <form class="form login-form" (submit)="login()" [formGroup]="form">
+              <div class="form-group">
+                <label for="email" class="input-label">Email</label>
+                <input
+                  class="input-text form-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                  formControlName="email"
+                  placeholder="Enter your login Id"
+                />
+                <span
+                  class="input-error"
+                  *ngIf="!form.get('email').valid && form.get('email').touched"
+                  >*Please enter E-Mail</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="input-label">Password</label>
+                <input
+                  class="input-text form-control"
+                  type="password"
+                  id="password"
+                  name="password"
+                  formControlName="password"
+                  placeholder="Enter your password"
+                />
+                <span
+                  class="input-error"
+                  *ngIf="!form.get('password').valid && form.get('password').touched"
+                  >*Please enter Password</span
+                >
+              </div>
+              <a class="forgot-password" routerLink="/forgotPassword">Forgot Password</a>
+              <hr />
+
+              <div class="row">
+                <div class="col-sm-6 mb-2 col-12">
+                  <button type="submit" class="btn btn-warning btn-block text-white">
+                    Login
+                  </button>
+                </div>
+                <div class="col-sm-6 mb-2 col-12">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-block text-white"
+                    routerLink="/register"
+                  >
+                    Register
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

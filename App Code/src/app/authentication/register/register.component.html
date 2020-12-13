@@ -1,0 +1,121 @@
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+
+<div class="row" *ngIf="!loading">
+  <div class="col-12">
+    <div class="row">
+      <div class="col-md-6 col-10 mx-auto">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="form-heading-2"><i class="fa fa-user-plus"></i>&nbsp;Register</h2>
+          </div>
+
+          <div class="card-body">
+            <form (submit)="register()" [formGroup]="form">
+              <div class="form-group">
+                <label for="name" class="input-label">Name</label>
+                <input
+                  class="input-text form-control"
+                  type="text"
+                  id="name"
+                  name="name"
+                  formControlName="name"
+                  placeholder="Enter Your Name"
+                />
+                <span
+                  class="input-error"
+                  *ngIf="!form.get('name').valid && form.get('name').touched"
+                  >*Please enter Name</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="input-label">Email</label>
+                <input
+                  class="input-text form-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                  formControlName="email"
+                  (focusout)="checkUser()"
+                  placeholder="example@email.com"
+                />
+                <span
+                  class="input-error"
+                  *ngIf="!form.get('email').valid && form.get('email').touched"
+                  >*Please Enter Valid E-mail</span
+                >
+                <span class="input-error" *ngIf="userExist"
+                  >*Please try another Email, this user already exist</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="input-label">Password</label>
+                <input
+                  class="input-text form-control"
+                  type="password"
+                  id="password"
+                  name="password"
+                  formControlName="password"
+                  placeholder="Enter your Password"
+                />
+                <span
+                  class="input-error"
+                  *ngIf="!form.get('password').valid && form.get('password').touched"
+                  >*Please enter Password</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="confirm_password" class="input-label">Confirm Password</label>
+                <input
+                  class="input-text form-control"
+                  type="password"
+                  id="confirm_password"
+                  name="confirm_password"
+                  formControlName="confirm_password"
+                  placeholder="Confirm Your Password"
+                />
+                <span
+                  class="input-error"
+                  *ngIf="
+                    !form.get('confirm_password').valid && form.get('confirm_password').touched
+                  "
+                  >*Please Enter Confirm Password</span
+                >
+                <br
+                  *ngIf="form.get('confirm_password').touched && form.hasError('invalidPassword')"
+                />
+                <span
+                  class="input-error"
+                  *ngIf="form.get('confirm_password').touched && form.hasError('invalidPassword')"
+                  >*Password and Confirm Password Does Not Match</span
+                >
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-sm-6 mb-2 col-12">
+                  <button type="submit" class="btn btn-warning btn-block text-white">
+                    Register
+                  </button>
+                </div>
+
+                <div class="col-sm-6 mb-2 col-12">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-block text-white"
+                    routerLink="/login"
+                  >
+                    Login
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

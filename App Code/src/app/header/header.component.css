@@ -1,0 +1,73 @@
+/* HEADER */
+.header-bg {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* LOGO */
+
+.logo {
+  height: 2.5rem;
+  width: auto;
+  cursor: pointer;
+  animation: fadeIn 1s ease-out;
+}
+
+/* MAIN NAV BAR */
+
+.main-nav {
+  list-style: none;
+  animation: moveInTop 1s ease-out;
+}
+
+.main-nav li {
+  display: inline;
+  margin-left: 0.5rem;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 0.3rem 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 0.125rem solid transparent;
+  font-size: 150%;
+  -webkit-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+}
+
+.badge {
+  padding: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#lblCartCount {
+  font-size: 12px;
+  background: #ff0000;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -10px;
+}
+
+/* Big tablets to 1200px (Width smaller that the 1140px row) */
+/* Small tablets to big tablets 768px - 1023px */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Small Phones to small tablets 481px - 767px */
+@media only screen and (max-width: 767px) {
+}
+
+/* Small Phones 0px - 480px */
+@media only screen and (max-width: 480px) {
+  .logo {
+    height: 2rem;
+  }
+}

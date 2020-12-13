@@ -1,0 +1,40 @@
+/* SECTION BACKGROUND */
+section {
+  background-color: #fff;
+  background-attachment: fixed;
+  padding: 3rem 0;
+  min-height: 85.5vh;
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0rem;
+}
+
+/* Big tablets to 1200px (Width smaller that the 1140px row) */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Small tablets to big tablets 768px - 1023px */
+@media only screen and (max-width: 1023px) {
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/* Small Phones to small tablets 481px - 767px */
+@media only screen and (max-width: 767px) {
+  section {
+    padding: 1.5rem 0;
+  }
+}
+
+/* Small Phones 0px - 480px */
+@media only screen and (max-width: 480px) {
+  section {
+    padding: 1rem 0;
+  }
+}

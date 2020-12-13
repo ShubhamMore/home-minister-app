@@ -1,0 +1,27 @@
+.form-heading-2 {
+}
+
+.input-label {
+  font-size: 100%;
+  color: #ffc107;
+}
+
+.input-text {
+  font-size: 100%;
+}
+
+.input-password {
+  font-size: 100%;
+}
+
+.form-error,
+.input-error {
+  color: #f00;
+  font-size: 75%;
+  float: right;
+}
+
+.card-header {
+  background-color: #ffc107;
+  color: #fff;
+}
